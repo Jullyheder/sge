@@ -7,6 +7,8 @@ from django.views.generic import (
     DeleteView
 )
 from products.models import Product
+from brands.models import Brand
+from categories.models import Category
 from products.forms import ProductForm
 
 
@@ -19,10 +21,29 @@ class ProductListView(ListView):
     def get_queryset(self):
         queryset = super().get_queryset()
         title = self.request.GET.get('title')
+        serie_number = self.request.GET.get('serie_number')
+        brand = self.request.GET.get('brand')
+        category = self.request.GET.get('category')
+
         if title:
             queryset = queryset.filter(title__icontains=title)
 
+        if serie_number:
+            queryset = queryset.filter(serie_number__icontains=serie_number)
+
+        if brand:
+            queryset = queryset.filter(brand__id=brand)
+
+        if category:
+            queryset = queryset.filter(category__id=category)
+
         return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['brands'] = Brand.objects.all()
+        context['categories'] = Category.objects.all()
+        return context
 
 
 class ProductCreateView(CreateView):

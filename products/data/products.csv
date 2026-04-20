@@ -1,16 +1,16 @@
-title|description|serie_number|cost_price|selling_price|quantity
-Notebook Dell Latitude 5440|Notebook corporativo com processador Intel e SSD.|SN100001|3200.00|4299.90|15
-Monitor LG 24 Polegadas|Monitor Full HD para uso profissional.|SN100002|580.00|799.90|25
-SSD Kingston 1TB|Unidade de armazenamento SSD SATA de alto desempenho.|SN100003|310.00|459.90|40
-Memória RAM Corsair 16GB|Módulo DDR4 para upgrade de desempenho.|SN100004|220.00|329.90|35
-Placa de Vídeo NVIDIA RTX 4060|GPU para jogos e renderização gráfica.|SN100005|1800.00|2499.90|12
-Processador Intel Core i7|CPU para alto desempenho e multitarefa.|SN100006|1450.00|1899.90|18
-Teclado Logitech Mecânico|Teclado mecânico para produtividade e uso gamer.|SN100007|280.00|399.90|30
-Mouse Logitech Wireless|Mouse sem fio ergonômico para escritório.|SN100008|90.00|149.90|50
-Roteador Cisco Empresarial|Equipamento para redes corporativas.|SN100009|950.00|1399.90|10
-Switch 24 Portas TP-Link|Switch gerenciável para infraestrutura de rede.|SN100010|720.00|999.90|14
-Servidor Dell PowerEdge|Servidor para aplicações corporativas.|SN100011|6800.00|8499.90|5
-Fonte Corsair 750W|Fonte de alimentação certificada para desktops.|SN100012|390.00|549.90|22
-Gabinete Gamer Cooler Master|Gabinete com ventilação otimizada.|SN100013|340.00|489.90|16
-Notebook Lenovo ThinkPad E14|Notebook profissional para empresas.|SN100014|2900.00|3999.90|11
-HD Externo Seagate 2TB|Dispositivo externo para backup e armazenamento.|SN100015|260.00|379.90|28
+title|description|serie_number|cost_price|selling_price
+Notebook Dell Latitude 5440|Notebook corporativo com processador Intel e SSD.|SN100001|3200.00|4299.90
+Monitor LG 24 Polegadas|Monitor Full HD para uso profissional.|SN100002|580.00|799.90
+SSD Kingston 1TB|Unidade de armazenamento SSD SATA de alto desempenho.|SN100003|310.00|459.90
+Memória RAM Corsair 16GB|Módulo DDR4 para upgrade de desempenho.|SN100004|220.00|329.90
+Placa de Vídeo NVIDIA RTX 4060|GPU para jogos e renderização gráfica.|SN100005|1800.00|2499.90
+Processador Intel Core i7|CPU para alto desempenho e multitarefa.|SN100006|1450.00|1899.90
+Teclado Logitech Mecânico|Teclado mecânico para produtividade e uso gamer.|SN100007|280.00|399.90
+Mouse Logitech Wireless|Mouse sem fio ergonômico para escritório.|SN100008|90.00|149.90
+Roteador Cisco Empresarial|Equipamento para redes corporativas.|SN100009|950.00|1399.90
+Switch 24 Portas TP-Link|Switch gerenciável para infraestrutura de rede.|SN100010|720.00|999.90
+Servidor Dell PowerEdge|Servidor para aplicações corporativas.|SN100011|6800.00|8499.90
+Fonte Corsair 750W|Fonte de alimentação certificada para desktops.|SN100012|390.00|549.90
+Gabinete Gamer Cooler Master|Gabinete com ventilação otimizada.|SN100013|340.00|489.90
+Notebook Lenovo ThinkPad E14|Notebook profissional para empresas.|SN100014|2900.00|3999.90
+HD Externo Seagate 2TB|Dispositivo externo para backup e armazenamento.|SN100015|260.00|379.90

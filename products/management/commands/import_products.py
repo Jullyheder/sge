@@ -40,7 +40,6 @@ class Command(BaseCommand):
                     serie_number=row['serie_number'],
                     cost_price=row['cost_price'],
                     selling_price=row['selling_price'],
-                    quantity=row['quantity'],
                     user_created=user,
                     user_updated=user
                 )

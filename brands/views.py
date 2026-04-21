@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic import (
     ListView,
@@ -10,11 +11,12 @@ from brands.models import Brand
 from brands.forms import BrandForm
 
 
-class BrandListView(ListView):
+class BrandListView(LoginRequiredMixin, PermissionRequiredMixin, ListView):
     model = Brand
     template_name = 'brand_list.html'
     context_object_name = 'brands'
     paginate_by = 10
+    permission_required = 'brands.view_brand'
 
     def get_queryset(self):
         queryset = super().get_queryset()
@@ -25,11 +27,12 @@ class BrandListView(ListView):
         return queryset
 
 
-class BrandCreateView(CreateView):
+class BrandCreateView(LoginRequiredMixin, PermissionRequiredMixin, CreateView):
     model = Brand
     template_name = 'brand_create.html'
     form_class = BrandForm
     success_url = reverse_lazy('brand_list')
+    permission_required = 'brands.add_brand'
 
     def form_valid(self, form):
         brand = form.save(commit=False)
@@ -38,17 +41,19 @@ class BrandCreateView(CreateView):
         return super().form_valid(form)
 
 
-class BrandDetailView(DetailView):
+class BrandDetailView(LoginRequiredMixin, PermissionRequiredMixin, DetailView):
     model = Brand
     template_name = 'brand_detail.html'
     context_object_name = 'brand'
+    permission_required = 'brands.view_brand'
 
 
-class BrandUpdateView(UpdateView):
+class BrandUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
     model = Brand
     template_name = 'brand_update.html'
     form_class = BrandForm
     success_url = reverse_lazy('brand_list')
+    permission_required = 'brands.change_brand'
 
     def form_valid(self, form):
         brand = form.save(commit=False)
@@ -56,8 +61,9 @@ class BrandUpdateView(UpdateView):
         return super().form_valid(form)
 
 
-class BrandDeleteView(DeleteView):
+class BrandDeleteView(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
     model = Brand
     template_name = 'brand_delete.html'
     context_object_name = 'brand'
     success_url = reverse_lazy('brand_list')
+    permission_required = 'brands.delete_brand'

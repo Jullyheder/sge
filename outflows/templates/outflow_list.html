@@ -3,7 +3,8 @@
 {% block title %}Saídas{% endblock %}
 
 {% block content %}
-  <div class="row mb-3">
+  {% include 'components/_sales_metrics.html' %}
+  <div class="row mb-3 mt-3">
     <div class="col-md-6">
       <form action="{% url 'outflow_list' %}" method="get" class="form">
         <div class="input-group">
@@ -42,9 +43,6 @@
             <td>
               <a href="{% url 'outflow_detail' outflow.id %}" class="btn btn-info btn-sm">
                 <i class="bi bi-eye"></i>
-              </a>
-              <a href="{% url 'outflow_update' outflow.id %}" class="btn btn-warning btn-sm">
-                <i class="bi bi-pencil"></i>
               </a>
             </td>
           </tr>

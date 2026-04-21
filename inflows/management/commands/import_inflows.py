@@ -30,12 +30,15 @@ class Command(BaseCommand):
 
         with open(filename, 'r', encoding='utf-8') as file:
             reader = list(csv.DictReader(file, delimiter='|'))
+
             for i, product in enumerate(products):
                 self.stdout.write(f'Importing inflow {product.title}')
                 description = str()
+                quantity = random.randint(1, 50)
                 try:
                     row = reader[i]
                     description = row['description']
+                    quantity = row['quantity']
                 except IndexError:
                     self.stdout.write(
                         self.style.WARNING(
@@ -46,7 +49,7 @@ class Command(BaseCommand):
                 inflow = Inflow(
                     supplier=random.choice(suppliers),
                     product=product,
-                    quantity=product.quantity,
+                    quantity=int(quantity),
                     description=description,
                     user_created=user,
                     user_updated=user

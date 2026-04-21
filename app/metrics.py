@@ -1,4 +1,4 @@
-from django.utils.numberformat import format
+from django.utils.formats import number_format
 from products.models import Product
 
 
@@ -17,17 +17,14 @@ def get_products_metrics() -> dict:
 
     product_metrics = {
         'total_quantity': total_quantity,
-        'total_cost_price': format(
-            total_cost_price, decimal_pos=2, decimal_sep=',',
-            thousand_sep='.', grouping=3, force_grouping=True
+        'total_cost_price': number_format(
+            total_cost_price, decimal_pos=2, force_grouping=True
         ),
-        'total_selling_price': format(
-            total_selling_price, decimal_pos=2, decimal_sep=',',
-            thousand_sep='.', grouping=3, force_grouping=True
+        'total_selling_price': number_format(
+            total_selling_price, decimal_pos=2, force_grouping=True
         ),
-        'total_profit': format(
-            total_profit, decimal_pos=2, decimal_sep=',',
-            thousand_sep='.', grouping=3, force_grouping=True
+        'total_profit': number_format(
+            total_profit, decimal_pos=2, force_grouping=True
         )
     }
 

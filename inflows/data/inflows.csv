@@ -1,16 +1,16 @@
-description
-Entrada inicial de estoque
-Reposição do fornecedor
-Compra para ampliação de estoque
-Recebimento de lote promocional
-Ajuste positivo de inventário
-Reposição mensal
-Entrada de mercadorias importadas
-Transferência entre depósitos
-Regularização de inventário
-Entrada por devolução
-Compra emergencial de reposição
-Recebimento de mercadorias nacionais
-Ajuste por conferência física
-Entrada de lote complementar
-Abastecimento para demanda sazonal
+description|quantity
+Entrada inicial de estoque|500
+Reposição do fornecedor|120
+Compra para ampliação de estoque|300
+Recebimento de lote promocional|80
+Ajuste positivo de inventário|15
+Reposição mensal|200
+Entrada de mercadorias importadas|150
+Transferência entre depósitos|60
+Regularização de inventário|25
+Entrada por devolução|12
+Compra emergencial de reposição|90
+Recebimento de mercadorias nacionais|180
+Ajuste por conferência física|10
+Entrada de lote complementar|70
+Abastecimento para demanda sazonal|250

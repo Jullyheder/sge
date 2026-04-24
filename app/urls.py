@@ -11,6 +11,7 @@ urlpatterns = [
 
     path('', home, name='home'),
 
+    path('auth/token/', include('authentication.urls')),
     path('brands/', include('brands.urls')),
     path('categories/', include('categories.urls')),
     path('inflows/', include('inflows.urls')),

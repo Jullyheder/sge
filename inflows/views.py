@@ -2,13 +2,12 @@ from django.db.models import Q
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic import (
-    ListView,
-    CreateView,
-    DetailView,
-    UpdateView
+    ListView, CreateView, DetailView,
 )
+from rest_framework.generics import ListCreateAPIView, RetrieveAPIView
 from inflows.models import Inflow
 from inflows.forms import InflowForm
+from inflows.serializers import InflowSerializer
 
 
 class InflowListView(LoginRequiredMixin, PermissionRequiredMixin, ListView):
@@ -24,7 +23,7 @@ class InflowListView(LoginRequiredMixin, PermissionRequiredMixin, ListView):
         if search_name:
             queryset = queryset.filter(
                 Q(product__title__icontains=search_name)
-                | Q(supplier__name__icontains=search_name)
+                | Q(supplier__name__icontains=search_name)  # noqa: W503
             )
 
         return queryset
@@ -49,3 +48,19 @@ class InflowDetailView(LoginRequiredMixin, PermissionRequiredMixin, DetailView):
     template_name = 'inflow_detail.html'
     context_object_name = 'inflow'
     permission_required = 'inflows.view_inflow'
+
+
+class InflowListCreateAPIView(ListCreateAPIView):
+    queryset = Inflow.objects.all()
+    serializer_class = InflowSerializer
+
+    def perform_create(self, serializer):
+        serializer.save(
+            user_created=self.request.user,
+            user_updated=self.request.user
+        )
+
+
+class InflowRetrieveAPIView(RetrieveAPIView):
+    queryset = Inflow.objects.all()
+    serializer_class = InflowSerializer

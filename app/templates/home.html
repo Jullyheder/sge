@@ -4,6 +4,12 @@
 
 {% block content %}
 
+  {% if perms.products.view_product and perms.outflows.view_outflow %}
+    {% if ai_result %}
+      {% include 'components/_ai_result.html' %}
+    {% endif %}
+  {% endif %}
+
   {% if perms.products.view_product and perms.inflows.view_inflow %}
     {% include 'components/_product_metrics.html' %}
   {% endif %}

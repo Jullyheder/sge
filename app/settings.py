@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
 
     'accounts',
+    'ai',
     'authentication',
     'brands',
     'categories',
@@ -170,3 +171,6 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=2),
 }
+
+OPENAI_MODEL = getenv('OPENAI_MODEL', 'gpt-5.4-mini')
+OPENAI_API_KEY = getenv('OPENAI_API_KEY')

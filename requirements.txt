@@ -4,3 +4,5 @@ djangorestframework_simplejwt==5.5.1
 psycopg2-binary==2.9.12
 python-dotenv==1.2.2
 requests==2.33.1
+openai==2.36.0
+Markdown==3.10.2
